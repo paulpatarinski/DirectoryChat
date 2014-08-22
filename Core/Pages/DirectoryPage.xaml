@@ -3,18 +3,18 @@
 xmlns:local="clr-namespace:Core;assembly=Core" x:Class="Core.DirectoryPage" Title="Directory">
 	
 <StackLayout>
-	 <ListView ItemsSource="{Binding People}">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
+	 <ListView ItemsSource="{Binding People}"  RowHeight="65">
+      <ListView.ItemTemplate >
+        <DataTemplate >
+          <ViewCell >
             <ViewCell.View>
-              <StackLayout Padding="5, 0, 0, 0"
+              <StackLayout Padding="5, 5, 0, 5"
                            Orientation="Horizontal"
-                           Spacing="15">
+                           Spacing="10" >
                 <Image Source="{Binding ProfileImage}"></Image>
                            
                 <Label Text="{Binding FullName}"
-                       Font="Medium" VerticalOptions="Center"/>
+                       Font="Large" VerticalOptions="Center"/>
                 
                 <Button HorizontalOptions="EndAndExpand" WidthRequest="100" Clicked="OnButtonClicked" CommandParameter="{Binding Id}" Text="Chat"></Button>
 

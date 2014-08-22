@@ -1,10 +1,10 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.MonoForAndroid_API_15" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core\Services\SignalRService.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.03cfb437437cd4ac" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Core\Pages\DirectoryPage.xaml">
     <Files>
-      <File FileName="Core\Pages\DirectoryPage.xaml" Line="21" Column="21" />
-      <File FileName="Core\Models\Person.cs" Line="9" Column="9" />
-      <File FileName="Core\Services\DirectoryService.cs" Line="26" Column="26" />
+      <File FileName="Core\Pages\DirectoryPage.xaml" Line="22" Column="22" />
+      <File FileName="Core\Models\Person.cs" Line="1" Column="1" />
+      <File FileName="Core\Services\DirectoryService.cs" Line="1" Column="1" />
       <File FileName="Core\Services\SignalRService.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
