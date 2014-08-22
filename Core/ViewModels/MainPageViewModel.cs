@@ -42,7 +42,7 @@ namespace Core
 
 		public async Task StartChatAsync (int id)
 		{
-			var test = id;
+			_navigation.PushAsync (new ChatPage (id));
 		}
 
 		public async Task LoadPeopleAsync ()

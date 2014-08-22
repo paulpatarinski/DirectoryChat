@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace Core
 {
@@ -17,11 +18,9 @@ namespace Core
 
 		async void OnButtonClicked (object sender, EventArgs args)
 		{ 
-			Button button = (Button)sender; 
+			var button = (Button)sender; 
 
-			_viewModel.StartChatAsync ((int)button.CommandParameter);
-
+			await _viewModel.StartChatAsync (Convert.ToInt32 (button.CommandParameter));
 		}
 	}
 }
-

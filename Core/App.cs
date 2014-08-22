@@ -7,7 +7,7 @@ namespace Core
 	{
 		public static Page GetMainPage ()
 		{	
-			return new DirectoryPage ();
+			return new NavigationPage (new DirectoryPage ());
 		}
 	}
 }
