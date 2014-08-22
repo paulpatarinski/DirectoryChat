@@ -1,14 +1,11 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.03cfb437437cd4ac" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core\Pages\ChatPage.xaml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.MonoForAndroid_API_15" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Core\Services\SignalRService.cs">
     <Files>
-      <File FileName="Core\ViewModels\ChatPageViewModel.cs" Line="3" Column="3" />
-      <File FileName="Core\Pages\ChatPage.xaml.cs" Line="28" Column="28" />
-      <File FileName="Core\ViewModels\MainPageViewModel.cs" Line="4" Column="4" />
-      <File FileName="Core\Pages\DirectoryPage.xaml.cs" Line="2" Column="2" />
-      <File FileName="Core\Pages\DirectoryPage.xaml" Line="1" Column="1" />
-      <File FileName="Core\App.cs" Line="27" Column="27" />
-      <File FileName="Core\Pages\ChatPage.xaml" Line="17" Column="17" />
+      <File FileName="Core\Pages\DirectoryPage.xaml" Line="21" Column="21" />
+      <File FileName="Core\Models\Person.cs" Line="9" Column="9" />
+      <File FileName="Core\Services\DirectoryService.cs" Line="26" Column="26" />
+      <File FileName="Core\Services\SignalRService.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

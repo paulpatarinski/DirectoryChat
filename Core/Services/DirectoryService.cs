@@ -24,14 +24,21 @@ namespace Core
 						Id = i,
 						FirstName = "Jane",
 						LastName = "Doe",
-						ProfileImage = "Fireman"
+						ProfileImage = "User"
+					});
+				else if (i % 3 == 0)
+					people.Add (new Person {
+						Id = i,
+						FirstName = "John",
+						LastName = "Smith",
+						ProfileImage = "DoctorSurgeon"
 					});
 				else
 					people.Add (new Person {
 						Id = i,
 						FirstName = "John",
 						LastName = "Doe",
-						ProfileImage = "Fireman"
+						ProfileImage = "DoctorNurse"
 					});
 
 			}
