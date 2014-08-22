@@ -38,7 +38,7 @@ namespace Core
 
 		public async Task SendMessageAsync (string name, string message)
 		{
-			var messageObj = new SignalRMessage{ Name = name, Message = message };
+			var messageObj = new SignalRMessage{ Name = "Paul P", Message = message };
 			// Invoke the 'UpdateNick' method on the server
 			await _chatHubProxy.Invoke ("Send", messageObj);
 		}

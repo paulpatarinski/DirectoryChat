@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace Core
 {
@@ -15,14 +16,19 @@ namespace Core
 		}
 
 		string _name;
+		bool _chatConnected;
 
 		ChatPageViewModel _viewModel;
+
 
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
 
-			_viewModel.ConnectAsync ();
+			if (!_chatConnected) {
+				_viewModel.ConnectAsync ();
+				_chatConnected = true;
+			}
 		}
 
 		public void ShowMessage (string message)

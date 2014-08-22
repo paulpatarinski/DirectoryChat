@@ -49,7 +49,7 @@ namespace Core
 
 		public async Task ConnectAsync ()
 		{
-			await _navigation.PushModalAsync (new ContentPage () { Content = new Label {
+			await _navigation.PushAsync (new ContentPage () {Title = "Chat", Content = new Label {
 					Text = "Connecting to chat...",
 					VerticalOptions = LayoutOptions.Center,
 					HorizontalOptions = LayoutOptions.Center,
@@ -59,7 +59,7 @@ namespace Core
 
 			await _signalRService.Connect ();
 
-			await _navigation.PopModalAsync ();
+			await _navigation.PopAsync ();
 
 			_signalRService.OnMessageReceive ((name, message) => {
 				var messageObj = new SignalRMessage { Name = name, Message = message };
