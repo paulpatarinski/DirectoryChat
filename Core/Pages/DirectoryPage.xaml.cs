@@ -4,15 +4,14 @@ using Xamarin.Forms;
 
 namespace Core
 {
-	public partial class MainPage : ContentPage
+	public partial class DirectoryPage : ContentPage
 	{
-		public MainPage ()
+		public DirectoryPage ()
 		{
 			InitializeComponent ();
 			_viewModel = new MainPageViewModel (this.Navigation);
 			BindingContext = _viewModel;
 		}
-
 
 		MainPageViewModel _viewModel;
 
@@ -20,10 +19,9 @@ namespace Core
 		{ 
 			Button button = (Button)sender; 
 
-			_viewModel.StartChat ((int)button.CommandParameter);
+			_viewModel.StartChatAsync ((int)button.CommandParameter);
 
 		}
-
 	}
 }
 
