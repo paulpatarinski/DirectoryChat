@@ -1,28 +1,48 @@
 ﻿using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Core
 {
 	public class MainPageViewModel : BaseViewModel
 	{
-		public MainPageViewModel () : this (new SampleService ())
+		public MainPageViewModel () : this (new DirectoryService ())
 		{
 		}
 
-		public MainPageViewModel (ISampleService sampleService)
+		public MainPageViewModel (IDirectoryService directoryService)
 		{
-			_sampleService = sampleService;
-			LoadDefaultMessageAsync ();
+			_directoryService = directoryService;
+			Message = "Directory";
+			LoadPeopleAsync ();
 		}
 
-		readonly ISampleService _sampleService;
+		readonly IDirectoryService _directoryService;
 
 		string _message;
 
 		public string Message{ get { return _message; } set { ChangeAndNotify (ref _message, value); } }
 
-		public async Task LoadDefaultMessageAsync ()
+
+
+		ObservableCollection<Person> _people;
+
+		public ObservableCollection<Person> People {
+			get {
+				if (_people == null)
+					_people = new ObservableCollection<Person> ();
+				return _people;
+			}
+			set { ChangeAndNotify (ref _people, value); }
+		}
+
+
+		public async Task LoadPeopleAsync ()
 		{
-			Message = await _sampleService.GetMessageAsync ();
+			var people = await _directoryService.GetPeopleAsync ();
+
+			foreach (var person in people) {
+				People.Add (person);
+			}
 		}
 	}
 }

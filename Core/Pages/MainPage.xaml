@@ -2,5 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:local="clr-namespace:Core;assembly=Core" x:Class="Core.MainPage">
 	
-   <Label Text="{Binding Message}" Font="Bold, Large" VerticalOptions="Center" HorizontalOptions="Center" />
+<StackLayout>
+   <Label Text="{Binding Message}" Font="Bold, Large" HorizontalOptions="Center" />
+	 <ListView ItemsSource="{Binding People}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Padding="5, 0, 0, 0"
+                           Orientation="Horizontal"
+                           Spacing="15">
+                <Image Source="{Binding ProfileImage}"></Image>
+                           
+                <Label Text="{Binding FirstName}"
+                       Font="Medium" VerticalOptions="Center"/>
+                
+                <Label Text="{Binding LastName}" VerticalOptions="Center"
+                                        Font="Medium" />
+
+                <Button HorizontalOptions="EndAndExpand" WidthRequest="100" Text="Chat"></Button>
+
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+	</StackLayout>
 </ContentPage>
