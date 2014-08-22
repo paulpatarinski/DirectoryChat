@@ -1,0 +1,15 @@
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.03cfb437437cd4ac" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Core\Pages\MainPage.xaml">
+    <Files>
+      <File FileName="Core\Pages\MainPage.xaml" Line="15" Column="15" />
+      <File FileName="Core\Pages\MainPage.xaml.cs" Line="46" Column="46" />
+      <File FileName="c:\WIP\XamarinFormsSeed\Core\ViewModels\MainPageViewModel.cs" Line="35" Column="35" />
+      <File FileName="Core\Services\SampleService.cs" Line="42" Column="42" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
