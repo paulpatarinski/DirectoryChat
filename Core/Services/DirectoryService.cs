@@ -18,12 +18,21 @@ namespace Core
 			};
 
 			for (int i = 1; i <= 50; i++) {
-				people.Add (new Person {
-					Id = i,
-					FirstName = "Paul" + i,
-					LastName = "P",
-					ProfileImage = "Fireman"
-				});
+
+				if (i % 2 == 0)
+					people.Add (new Person {
+						Id = i,
+						FirstName = "Jane",
+						LastName = "Doe",
+						ProfileImage = "Fireman"
+					});
+				else
+					people.Add (new Person {
+						Id = i,
+						FirstName = "John",
+						LastName = "Doe",
+						ProfileImage = "Fireman"
+					});
 
 			}
 

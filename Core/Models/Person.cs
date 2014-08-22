@@ -16,6 +16,11 @@ namespace Core
 			set;
 		}
 
+
+		public  string FullName {
+			get{ return FirstName + " " + LastName; }
+		}
+
 		public string ProfileImage {
 			get;
 			set;

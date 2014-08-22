@@ -13,12 +13,9 @@ xmlns:local="clr-namespace:Core;assembly=Core" x:Class="Core.DirectoryPage" Titl
                            Spacing="15">
                 <Image Source="{Binding ProfileImage}"></Image>
                            
-                <Label Text="{Binding FirstName}"
+                <Label Text="{Binding FullName}"
                        Font="Medium" VerticalOptions="Center"/>
                 
-                <Label Text="{Binding LastName}" VerticalOptions="Center"
-                                        Font="Medium" />
-
                 <Button HorizontalOptions="EndAndExpand" WidthRequest="100" Clicked="OnButtonClicked" CommandParameter="{Binding Id}" Text="Chat"></Button>
 
               </StackLayout>
