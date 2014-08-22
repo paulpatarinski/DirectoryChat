@@ -23,13 +23,13 @@ namespace Core
 
 		}
 
-		private readonly SignalRService _signalRService;
+		readonly SignalRService _signalRService;
 
 		string _message;
 
 		public string Message{ get { return _message; } set { ChangeAndNotify (ref _message, value); } }
 
-		private ObservableCollection<SignalRMessage> _messages;
+		ObservableCollection<SignalRMessage> _messages;
 
 		public ObservableCollection<SignalRMessage> Messages {
 			get {

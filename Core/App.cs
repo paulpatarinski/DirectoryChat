@@ -7,7 +7,9 @@ namespace Core
 	{
 		public static Page GetMainPage ()
 		{	
-			return new NavigationPage (new DirectoryPage ());
+			var navigationPage = new NavigationPage (new DirectoryPage ());
+			navigationPage.SetValue (NavigationPage.HasNavigationBarProperty, false);
+			return navigationPage;
 		}
 	}
 }
