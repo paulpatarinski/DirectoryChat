@@ -1,4 +1,4 @@
-XamarinFormsSeed
+Directory Chat
 ================
 
-A seed project for Xamarin Forms
+A sample app demonstrating how to implement a chat feature for a directory of employees.
