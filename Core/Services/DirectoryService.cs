@@ -19,16 +19,12 @@ namespace Core
 
 			for (int i = 1; i <= 50; i++) {
 				people.Add (new Person {
+					Id = i,
 					FirstName = "Paul" + i,
 					LastName = "P",
 					ProfileImage = "Fireman"
 				});
 
-				people.Add (new Person {
-					FirstName = "Sandesh" + i,
-					LastName = "M",
-					ProfileImage = "Fireman"
-				});
 			}
 
 			return people;

@@ -1,22 +1,27 @@
 ﻿using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Core
 {
 	public class MainPageViewModel : BaseViewModel
 	{
-		public MainPageViewModel () : this (new DirectoryService ())
+		public MainPageViewModel (INavigation navigation) : this (new DirectoryService (), navigation)
 		{
 		}
 
-		public MainPageViewModel (IDirectoryService directoryService)
+		public MainPageViewModel (IDirectoryService directoryService, INavigation navigation)
 		{
 			_directoryService = directoryService;
+			_navigation = navigation;
 			Message = "Directory";
+		
 			LoadPeopleAsync ();
 		}
 
 		readonly IDirectoryService _directoryService;
+		readonly INavigation _navigation;
 
 		string _message;
 
@@ -35,6 +40,10 @@ namespace Core
 			set { ChangeAndNotify (ref _people, value); }
 		}
 
+		public async Task StartChatAsync (int id)
+		{
+			var test = id;
+		}
 
 		public async Task LoadPeopleAsync ()
 		{

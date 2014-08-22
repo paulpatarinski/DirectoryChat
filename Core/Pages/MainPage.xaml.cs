@@ -9,8 +9,21 @@ namespace Core
 		public MainPage ()
 		{
 			InitializeComponent ();
-			BindingContext = new MainPageViewModel ();
+			_viewModel = new MainPageViewModel (this.Navigation);
+			BindingContext = _viewModel;
 		}
+
+
+		MainPageViewModel _viewModel;
+
+		async void OnButtonClicked (object sender, EventArgs args)
+		{ 
+			Button button = (Button)sender; 
+
+			_viewModel.StartChat ((int)button.CommandParameter);
+
+		}
+
 	}
 }
 
