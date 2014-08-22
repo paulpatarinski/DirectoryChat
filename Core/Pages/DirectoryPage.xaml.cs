@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
-using System.Threading.Tasks;
 
 namespace Core
 {
@@ -10,17 +8,17 @@ namespace Core
 		public DirectoryPage ()
 		{
 			InitializeComponent ();
-			_viewModel = new MainPageViewModel (this.Navigation);
+			_viewModel = new DirectoryViewModel (this.Navigation);
 			BindingContext = _viewModel;
 		}
 
-		MainPageViewModel _viewModel;
+		readonly DirectoryViewModel _viewModel;
 
 		async void OnButtonClicked (object sender, EventArgs args)
 		{ 
 			var button = (Button)sender; 
 
-			await _viewModel.StartChatAsync (Convert.ToInt32 (button.CommandParameter));
+			await _viewModel.StartChatAsync (button.CommandParameter.ToString ());
 		}
 	}
 }

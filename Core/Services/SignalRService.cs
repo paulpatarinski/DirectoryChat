@@ -36,9 +36,9 @@ namespace Core
 			_chatHubProxy.On<string, string> ("broadcastMessage", messageReceivedAction);
 		}
 
-		public async Task SendMessageAsync (string message)
+		public async Task SendMessageAsync (string name, string message)
 		{
-			var messageObj = new SignalRMessage{ Name = "Android", Message = message };
+			var messageObj = new SignalRMessage{ Name = name, Message = message };
 			// Invoke the 'UpdateNick' method on the server
 			await _chatHubProxy.Invoke ("Send", messageObj);
 		}

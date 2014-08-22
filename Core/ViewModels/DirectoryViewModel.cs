@@ -5,13 +5,13 @@ using Xamarin.Forms;
 
 namespace Core
 {
-	public class MainPageViewModel : BaseViewModel
+	public class DirectoryViewModel : BaseViewModel
 	{
-		public MainPageViewModel (INavigation navigation) : this (new DirectoryService (), navigation)
+		public DirectoryViewModel (INavigation navigation) : this (new DirectoryService (), navigation)
 		{
 		}
 
-		public MainPageViewModel (IDirectoryService directoryService, INavigation navigation)
+		public DirectoryViewModel (IDirectoryService directoryService, INavigation navigation)
 		{
 			_directoryService = directoryService;
 			_navigation = navigation;
@@ -40,9 +40,9 @@ namespace Core
 			set { ChangeAndNotify (ref _people, value); }
 		}
 
-		public async Task StartChatAsync (int id)
+		public async Task StartChatAsync (string name)
 		{
-			_navigation.PushAsync (new ChatPage (id));
+			_navigation.PushAsync (new ChatPage (name));
 		}
 
 		public async Task LoadPeopleAsync ()

@@ -9,23 +9,29 @@ namespace Core
 	public class ChatPageViewModel: BaseViewModel
 	{
 		//TODO : Use IOC
-		public ChatPageViewModel () : this (new SignalRService ())
+		public ChatPageViewModel (string name, INavigation navigation) : this (new SignalRService (), name, navigation)
 		{
 		}
 
-		public ChatPageViewModel (SignalRService signalRService)
+		public ChatPageViewModel (SignalRService signalRService, string name, INavigation navigation)
 		{
 			_signalRService = signalRService;
-			ConnectAsync ();
+			_name = name;
+			_navigation = navigation;
+
 			SubmitButtonCommand = new Command (() => {
-				SubmitMessage (Message);
+				SubmitMessage (name, Message);
 			});
 
 		}
 
 		readonly SignalRService _signalRService;
 
+		string _name;
+
 		string _message;
+
+		INavigation _navigation;
 
 		public string Message{ get { return _message; } set { ChangeAndNotify (ref _message, value); } }
 
@@ -43,7 +49,17 @@ namespace Core
 
 		public async Task ConnectAsync ()
 		{
+			await _navigation.PushModalAsync (new ContentPage () { Content = new Label {
+					Text = "Connecting to chat...",
+					VerticalOptions = LayoutOptions.Center,
+					HorizontalOptions = LayoutOptions.Center,
+					Font = Font.SystemFontOfSize (20)
+				}
+			});
+
 			await _signalRService.Connect ();
+
+			await _navigation.PopModalAsync ();
 
 			_signalRService.OnMessageReceive ((name, message) => {
 				var messageObj = new SignalRMessage { Name = name, Message = message };
@@ -53,9 +69,9 @@ namespace Core
 
 		public ICommand SubmitButtonCommand { protected set; get; }
 
-		public async Task SubmitMessage (string message)
+		public async Task SubmitMessage (string name, string message)
 		{
-			_signalRService.SendMessageAsync (message);
+			_signalRService.SendMessageAsync (name, message);
 
 			Message = string.Empty;
 		}

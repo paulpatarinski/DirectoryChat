@@ -16,7 +16,7 @@ xmlns:local="clr-namespace:Core;assembly=Core" x:Class="Core.DirectoryPage" Titl
                 <Label Text="{Binding FullName}"
                        Font="Large" VerticalOptions="Center"/>
                 
-                <Button HorizontalOptions="EndAndExpand" WidthRequest="100" Clicked="OnButtonClicked" CommandParameter="{Binding Id}" Text="Chat"></Button>
+                <Button HorizontalOptions="EndAndExpand" WidthRequest="100" Clicked="OnButtonClicked" CommandParameter="{Binding FullName}" Text="Chat"></Button>
 
               </StackLayout>
             </ViewCell.View>
