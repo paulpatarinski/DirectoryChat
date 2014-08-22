@@ -28,21 +28,7 @@ namespace Core
 			// Create a proxy to the 'ChatHub' SignalR Hub
 			_chatHubProxy = _hubConnection.CreateHubProxy ("ChatHub");
 
-			// Wire up a handler for the 'UpdateChatMessage' for the server
-			// to be called on our client
-//			_chatHubProxy.On<string,string> ("broadcastMessage", (name, message) => {
-//				textView.Text = string.Format ("Received Msg: {0}\r\n", message);
-//			}
-//			);
-
-			try {
-				await _hubConnection.Start ();
-			} catch (Exception e) {
-				throw;
-			}
-			// Start the connection
-
-		
+			await _hubConnection.Start ();
 		}
 
 		public void OnMessageReceive (Action<string,string> messageReceivedAction)
@@ -56,10 +42,5 @@ namespace Core
 			// Invoke the 'UpdateNick' method on the server
 			await _chatHubProxy.Invoke ("Send", messageObj);
 		}
-
-
-
-
 	}
 }
-
